@@ -1,0 +1,17 @@
+
+<p id="resultadoSumaEl"></p>
+
+<script>
+    function sumar(valor1 = 0, valor2 = 0, callback) {
+
+        let suma = Number(valor1) + Number(valor2);
+
+        callback(suma);
+    }
+
+    sumar(4, 3, (suma) => console.log("resultado suma:", suma));
+
+    sumar(4, 3, (suma) => resultadoSumaEl.innerText = `Resultado suma: ${suma}`);
+
+    sumar(4, 3, (suma) => alert(`Resultado suma: ${suma}`));
+</script>

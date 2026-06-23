@@ -1,0 +1,80 @@
+<button id="btnCalculo">Solicitar notas</button>
+
+<div>
+    <h2>Detalles promedio:</h2>
+    <p>Notas ingresas: <span id="notasIngresadasEl"></span></p>
+    <p>Promedio notas: <span id="promedioNotasEl"></span></p>
+</div>
+
+<script>
+    function sumar(...valores) { // OPERADOR REST
+        if (valores.length == 0) {
+            return 0;
+        }
+
+        let total = 0;
+
+        for (const valor of valores) {
+            total += valor;
+        }
+
+        return total;
+    };
+
+    function promediar(...valores) {
+        let total = sumar(...valores);
+        let promedio = total / valores.length;
+        return promedio;
+    };
+
+
+
+    function pedirNota(iterador, cantidadNotas) {
+
+        let continuar = true;
+
+        let nota = 0;
+
+        while (continuar) {
+
+            nota = parseFloat(prompt(`Ingrese la nota N° ${iterador} de ${cantidadNotas}, en un rango de (1-7):`));
+
+            if (isNaN(nota) || nota < 1 || nota > 7) {
+                alert("DEBE INGRESAR UNA NOTA VÁLIDA ENTRE 1 - 7.");
+            } else {
+                continuar = false;
+            }
+        };
+
+        return nota;
+    }
+
+    const btnCalculo = document.getElementById("btnCalculo");
+
+    btnCalculo.addEventListener("click", function (event) {
+
+        let cantidadNotas = Number(prompt("Cuántas notas desea ingresar?"));
+
+        if (isNaN(cantidadNotas) || cantidadNotas < 1) {
+            return alert("Debe ingresar 'número' mayor que 0.");
+        }
+
+        const notas = [];
+
+        for (let iterador = 1; iterador <= cantidadNotas; iterador++) {
+
+            let nota = pedirNota(iterador, cantidadNotas);
+
+            notas.push(nota);
+        };
+
+        let promedio = promediar(...notas); //OPERADOR SPREAD
+
+        //MANIPULANDO DOM
+        notasIngresadasEl.innerText = `${notas.join(" | ")}`;
+
+        promedioNotasEl.innerText = promedio.toFixed(2);
+
+    });
+
+</script>
