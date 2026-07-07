@@ -1,0 +1,21 @@
+<section id="seccion-1">
+    <p>Elemento 1</p>
+    <p id="unico">Elemento 2</p>
+    <p>Elemento 3</p>
+    <p>Elemento 4</p>
+</section>
+
+<script>
+
+    const unico = document.getElementById("unico");
+
+    unico.textContent = unico.textContent.toUpperCase() + "!!!";
+
+    //AGREGAR ESTILOS EN LÍNEA USANDO LA PROPIEDAD STYLE
+
+    unico.style.backgroundColor = "green";
+    unico.style.color = "red";
+    unico.style.fontSize = "20px";
+    unico.style.fontWeight = "600";
+
+</script>

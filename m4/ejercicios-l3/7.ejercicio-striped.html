@@ -1,0 +1,25 @@
+<div style="width: 400px;">
+    <ul>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+        <li>elemento 5</li>
+    </ul>
+</div>
+
+
+<script>
+    const odd = document.querySelectorAll("ul > li:nth-child(odd)");
+
+    for (const elemento of odd) {
+        elemento.style.backgroundColor = "grey";
+    }
+
+    const even = document.querySelectorAll("ul > li:nth-child(even)");
+
+    for (const elemento of even) {
+        elemento.style.backgroundColor = "yellow";
+    }
+
+</script>

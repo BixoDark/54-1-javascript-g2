@@ -1,0 +1,32 @@
+<div style="width: 400px;">
+    <ul id="lista-1">
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+        <li>elemento 5</li>
+    </ul>
+</div>
+
+
+<style>
+    .marcado {
+        color: red;
+        text-decoration: line-through;
+    }
+</style>
+
+
+<script>
+
+    const elementosLista = document.querySelectorAll("#lista-1 li");
+
+    for (const elemento of elementosLista) {
+
+        elemento.addEventListener("click", (event) => {
+            //elemento.classList.add("marcado");
+            elemento.classList.toggle("marcado");
+        });
+    }
+
+</script>

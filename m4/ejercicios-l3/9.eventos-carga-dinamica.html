@@ -1,0 +1,50 @@
+<div>
+    <ul id="lista-1">
+
+    </ul>
+</div>
+
+
+<style>
+    .marcado {
+        color: red;
+        text-decoration: line-through;
+    }
+</style>
+
+
+<script>
+
+    const lista1Dom = document.getElementById("lista-1");
+
+    const lista = ["Elemento 1", "Elemento 2", "Elemento 3", "Elemento 4"];
+
+
+    const cargarElementos = (listaElementos = []) => {
+
+        //LIMPIAMOS LA LISTA AL COMIENZO
+        lista1Dom.innerHTML = "";
+
+        for (const elemento of listaElementos) {
+
+            const li = document.createElement("li");
+            li.textContent = elemento;
+
+            lista1Dom.append(li);
+        }
+    }
+
+    cargarElementos(lista);
+
+
+
+    //EVENTOS DOM
+    lista1Dom .addEventListener("click", (event) => {
+        const elemento = event.target;
+        if(elemento.tagName == "LI"){
+            elemento.classList.toggle("marcado");
+        }
+    });
+
+
+</script>

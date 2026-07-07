@@ -1,0 +1,31 @@
+<div style="width: 400px;">
+    <ul id="lista-1">
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+        <li>elemento 5</li>
+    </ul>
+</div>
+
+
+<style>
+    .marcado {
+        color: red;
+        text-decoration: line-through;
+    }
+</style>
+
+
+<script>
+
+    const listaElementos = document.querySelector("#lista-1");
+
+    listaElementos.addEventListener("click", (event) => {
+        const elemento = event.target;
+        if(elemento.tagName == "LI"){
+            elemento.classList.toggle("marcado");
+        }
+    });
+
+</script>

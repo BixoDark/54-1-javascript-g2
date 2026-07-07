@@ -1,0 +1,28 @@
+<section id="seccion-1">
+    <p>Elemento 1</p>
+    <p class="destacado">Elemento 2</p>
+    <p>Elemento 3</p>
+    <p>Elemento 4</p>
+</section>
+
+<section id="seccion-2">
+    <p>Elemento 1</p>
+    <p>Elemento 2</p>
+    <p class="destacado">Elemento 3</p>
+    <p>Elemento 4</p>
+</section>
+
+<script>
+    const destacados = document.getElementsByClassName("destacado");
+
+    if (destacados.length > 0) {
+
+        for (const elemento of destacados) {
+            elemento.style.color = "red";
+            elemento.style.textDecoration = "underline";
+
+            elemento.innerText = elemento.innerText.toUpperCase();
+        }
+    }
+
+</script>
