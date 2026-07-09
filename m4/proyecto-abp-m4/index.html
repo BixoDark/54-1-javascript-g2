@@ -35,7 +35,12 @@
                         placeholder="Ingresa la descripción de la tarea..." required>
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-primary">
+                    <input type="submit" class="btn btn-primary" id="btn-crear-tarea">
+
+                    <button class="btn btn-primary d-none" type="button" disabled id="btn-crear-tarea-spinner">
+                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                        <span role="status">Creando tarea...</span>
+                    </button>
                 </div>
             </form>
 

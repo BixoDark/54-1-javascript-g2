@@ -55,10 +55,21 @@ formAddTarea.addEventListener("submit", (event) => {
 
         const tareas = gestorTareas.obtenerTareas();
 
-        cargarTareasTabla(tareas);
+        const btnCrearTarea = document.getElementById("btn-crear-tarea");
+        const btnCrearTareaSpinner = document.getElementById("btn-crear-tarea-spinner");
 
-       //LIMPIAR EL FORMULARIO AL FINAL
-        formAddTarea.reset();
+        btnCrearTarea.classList.add("d-none");
+        btnCrearTareaSpinner.classList.remove("d-none");
+
+        setTimeout(()=> {
+            cargarTareasTabla(tareas);
+            //LIMPIAR EL FORMULARIO AL FINAL
+            formAddTarea.reset();
+
+            btnCrearTarea.classList.remove("d-none");
+            btnCrearTareaSpinner.classList.add("d-none");
+        }, 1500);
+        
 
     } catch (error) {
         console.log(error);
